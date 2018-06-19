@@ -1,2 +1,3 @@
-# telegram-bots
-Telegram Bots Java API
+# telegram-bots - Telegram Bots Java API
+
+A Java implementation of Telegram Bot API
