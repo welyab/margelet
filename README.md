@@ -6,12 +6,14 @@ Simple usage:
 
 ```java
 Margelet margelet = new Margelet("[bot api token]");
-esponse<User> response = margelet.getMe();
+Response<User> response = margelet.getMe();
 if(response.isOk()) {
 User user = response.getResult();
 ...
 }
 ```
+
+See [Telegram Bot API](https://core.telegram.org/bots/api) to know more.
 
 ```
 Copyright (C) 2018 Welyab da Silva Paula
