@@ -1,3 +1,3 @@
-# telegram-bots - Telegram Bots Java API
+# Margelet - Telegram Bots Java API
 
-A Java implementation of Telegram Bot API
+Margelet is a Java implementation to communicate with Telegram Bot API
