@@ -14,7 +14,8 @@ User user = response.getResult();
 ```
 
 ```
-Copyright (C) 2007 The Guava Authors
+Copyright (C) 2018 Welyab da Silva Paula
+
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
 in compliance with the License. You may obtain a copy of the License at
 
