@@ -29,68 +29,86 @@ import com.google.gson.annotations.SerializedName;
  */
 public class User {
 
+    @SerializedName("ok")
     @SuppressWarnings("javadoc")
     private Integer id;
 
     @SerializedName("is_bot")
+    @SuppressWarnings("javadoc")
     private Boolean bot;
 
     @SerializedName("first_name")
+    @SuppressWarnings("javadoc")
     private String firstName;
 
     @SerializedName("last_name")
+    @SuppressWarnings("javadoc")
     private String lastName;
 
     @SerializedName("username")
+    @SuppressWarnings("javadoc")
     private String username;
 
     @SerializedName("language_code")
+    @SuppressWarnings("javadoc")
     private String languageCode;
 
+    @SuppressWarnings("javadoc")
     public Integer getId() {
 	return id;
     }
 
+    @SuppressWarnings("javadoc")
     public void setId(Integer id) {
 	this.id = id;
     }
 
+    @SuppressWarnings("javadoc")
     public Boolean getBot() {
 	return bot;
     }
 
+    @SuppressWarnings("javadoc")
     public void setBot(Boolean bot) {
 	this.bot = bot;
     }
 
+    @SuppressWarnings("javadoc")
     public String getFirstName() {
 	return firstName;
     }
 
+    @SuppressWarnings("javadoc")
     public void setFirstName(String firstName) {
 	this.firstName = firstName;
     }
 
+    @SuppressWarnings("javadoc")
     public String getLastName() {
 	return lastName;
     }
 
+    @SuppressWarnings("javadoc")
     public void setLastName(String lastName) {
 	this.lastName = lastName;
     }
 
+    @SuppressWarnings("javadoc")
     public String getUsername() {
 	return username;
     }
 
+    @SuppressWarnings("javadoc")
     public void setUsername(String username) {
 	this.username = username;
     }
 
+    @SuppressWarnings("javadoc")
     public String getLanguageCode() {
 	return languageCode;
     }
 
+    @SuppressWarnings("javadoc")
     public void setLanguageCode(String languageCode) {
 	this.languageCode = languageCode;
     }

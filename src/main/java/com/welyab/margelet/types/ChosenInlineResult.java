@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-package com.welyab.margelet.http;
+package com.welyab.margelet.types;
 
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
+public class ChosenInlineResult {
 
-import com.welyab.margelet.Configuration;
-
-public class HttpClientPool {
-
-    public static CloseableHttpClient getClient(Configuration configuration) {
-	return HttpClientBuilder.create().build();
-    }
 }

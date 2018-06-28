@@ -18,11 +18,42 @@ package com.welyab.margelet.types;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Contains information about why a request was unsuccessful.
+ * 
+ * <p>
+ * Telegram docs: <a
+ * href="https://core.telegram.org/bots/api#responseparameters">https://core.telegram.org/bots/api#responseparameters</a>
+ * 
+ * @author Welyab Paula
+ */
 public class ResponseParameters {
 
     @SerializedName("migrate_to_chat_id")
+    @SuppressWarnings("javadoc")
     private Integer migrateToChatId;
 
     @SerializedName("retry_after")
+    @SuppressWarnings("javadoc")
     private Integer retryAfter;
+
+    @SuppressWarnings("javadoc")
+    public Integer getMigrateToChatId() {
+	return migrateToChatId;
+    }
+
+    @SuppressWarnings("javadoc")
+    public void setMigrateToChatId(Integer migrateToChatId) {
+	this.migrateToChatId = migrateToChatId;
+    }
+
+    @SuppressWarnings("javadoc")
+    public Integer getRetryAfter() {
+	return retryAfter;
+    }
+
+    @SuppressWarnings("javadoc")
+    public void setRetryAfter(Integer retryAfter) {
+	this.retryAfter = retryAfter;
+    }
 }

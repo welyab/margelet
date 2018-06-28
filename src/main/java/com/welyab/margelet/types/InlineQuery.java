@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package com.welyab.margelet.json;
+package com.welyab.margelet.types;
 
-public class JsonUtil {
+public class InlineQuery {
+
 }

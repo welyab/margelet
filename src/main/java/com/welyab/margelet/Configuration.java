@@ -16,33 +16,32 @@
 
 package com.welyab.margelet;
 
-/**
- * Main exception of Margelet.
- * 
- * @author Welyab Paula
- */
-public class MargeletException extends RuntimeException {
+public class Configuration {
 
-    /**
-     */
-    private static final long serialVersionUID = 1L;
+    private static final Configuration EMPTY = builder().build();
 
-    @SuppressWarnings("javadoc")
-    public MargeletException() {
+    public Configuration merge(Configuration configuration) {
+	return this;
     }
 
-    @SuppressWarnings("javadoc")
-    public MargeletException(String message) {
-	super(message);
+    public static Builder builder() {
+	return new Builder();
     }
 
-    @SuppressWarnings("javadoc")
-    public MargeletException(Throwable cause) {
-	super(cause);
+    public static Configuration empty() {
+	return EMPTY;
     }
 
-    @SuppressWarnings("javadoc")
-    public MargeletException(String message, Throwable cause) {
-	super(message, cause);
+    public static final class Builder {
+
+	private Configuration configuration;
+
+	private Builder() {
+	    configuration = new Configuration();
+	}
+
+	public Configuration build() {
+	    return configuration;
+	}
     }
 }

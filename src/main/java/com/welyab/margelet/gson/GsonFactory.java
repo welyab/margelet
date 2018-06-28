@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.welyab.margelet.http;
+package com.welyab.margelet.gson;
 
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import com.welyab.margelet.Configuration;
 
-public class HttpClientPool {
+public class GsonFactory {
 
-    public static CloseableHttpClient getClient(Configuration configuration) {
-	return HttpClientBuilder.create().build();
+    public static Gson create(Configuration configuration) {
+	return new GsonBuilder().create();
     }
 }
