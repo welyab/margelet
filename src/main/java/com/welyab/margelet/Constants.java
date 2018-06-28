@@ -40,6 +40,10 @@ public class Constants {
     private Constants() {
     }
 
+    // ============================================================================
+    // Telegram services URLs and its parameters markers
+    // ============================================================================
+
     /**
      * The main URL provided by Telegram Bot API to access services.
      * 
@@ -86,10 +90,50 @@ public class Constants {
      */
     public static final String URL_API_PARAM_METHOD_NAME = "{methodName}";
 
+    /**
+     * URL to download files from Telegram cloud.
+     * 
+     * <p>
+     * This URL expects two parameters, the api access token and the file to
+     * path do download (the file path can be obtained by calling the
+     * <code>getFile</code> API method).
+     * 
+     * <p>
+     * Before download a file from Telegram, it is need to prepare it for
+     * download, by calling the API method method
+     * {@link Margelet#getFile(String)}.
+     * 
+     * @see Margelet#getFile(String)
+     * @see #URL_FILE_PARAM_API_TOKEN
+     * @see #URL_FILE_PARAM_FILE_PATH
+     */
     public static final String URL_FILE = "https://api.telegram.org/file/bot{apiToken}/{file_path}";
 
+    /**
+     * Parameter name marker to URL specified in {@link #URL_FILE}; this
+     * parameter define which is the api access token to communicate with
+     * Telegram services.
+     * 
+     * <p>
+     * Should be used only with {@link #URL_FILE}.
+     * 
+     * <p>
+     * In the most cases, you will not need work with this constant. It is used
+     * inside library internals to mount request URL.
+     */
     public static final String URL_FILE_PARAM_API_TOKEN = "{apiToken}";
 
+    /**
+     * Parameter name marker to URL specified in {@link #URL_FILE}; this
+     * parameter defines which is the file path.
+     * 
+     * <p>
+     * Should be used only with {@link #URL_FILE}.
+     * 
+     * <p>
+     * In the most cases, you will not need work with this constant. It is used
+     * inside library internals to mount request URL.
+     */
     public static final String URL_FILE_PARAM_FILE_PATH = "{file_path}";
 
     // ============================================================================
@@ -116,7 +160,12 @@ public class Constants {
      */
     public static final String METHOD_GET_FILE = "getFile";
 
-    public static final String FILE_ID = "file_id";
+    // ============================================================================
+    // Parameters field names for Telegram method requests.
+    // ============================================================================
+
+    @SuppressWarnings("javadoc")
+    public static final String PARAM_FILE_ID = "file_id";
 
     // ============================================================================
     // Available configurations provided by com.welyab.margelet

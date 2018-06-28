@@ -113,16 +113,72 @@ public class TelegramMethod {
 	this.responseType = TypeToken.getParameterized(Response.class, type).getType();
     }
 
+    /**
+     * Calls a Telegram method with given configuration.
+     * 
+     * @param configuration The configuration.
+     * 
+     * @return The method result.
+     * 
+     *         <p>
+     *         Telegram method responses are a JSON document in the format of an
+     *         <code>Response</code> object. The actual result of an Telegram
+     *         method calling is placed in the <code>"result"</code> field.
+     */
+    public Response<?> call(Configuration configuration) {
+	return call(ImmutableMap.of(), configuration);
+    }
+
+    /**
+     * Calls a Telegram method with given parameters and configuration.
+     * 
+     * @param parameters Parameters expected by Telegram method. This object
+     *            will be encoded as JSON document and delivered in HTTP request
+     *            boby.
+     * 
+     *            <p>
+     *            If the parameter is a instance of a <code>java.util.Map</code>
+     *            and is empty, it will be ignored.
+     * 
+     * @param configuration The configuration.
+     * 
+     * @return The method result.
+     * 
+     *         <p>
+     *         Telegram method responses are a JSON document in the format of an
+     *         <code>Response</code> object. The actual result of an Telegram
+     *         method calling is placed in the <code>"result"</code> field.
+     */
     public Response<?> call(
 	    ImmutableMap<String, Object> parameters,
 	    Configuration configuration
     ) {
-	return call(
-		(Object) parameters,
-		configuration
-	);
+	Preconditions.checkNotNull(parameters, "Parameter 'parameters' cannot be null");
+	Preconditions.checkNotNull(configuration, "Parameter 'configuration' cannot be null");
+
+	return call((Object) parameters, configuration);
     }
 
+    /**
+     * Calls a Telegram method with given parameters and configuration.
+     * 
+     * @param parameters Parameters expected by Telegram method. This object
+     *            will be encoded as JSON document and delivered in HTTP request
+     *            boby.
+     * 
+     *            <p>
+     *            If the parameter is a instance of a <code>java.util.Map</code>
+     *            and is empty, it will be ignored.
+     * 
+     * @param configuration The configuration.
+     * 
+     * @return The method result.
+     * 
+     *         <p>
+     *         Telegram method responses are a JSON document in the format of an
+     *         <code>Response</code> object. The actual result of an Telegram
+     *         method calling is placed in the <code>"result"</code> field.
+     */
     public Response<?> call(Object parameters, Configuration configuration) {
 	Preconditions.checkNotNull(parameters, "Parameter 'parameters' cannot be null");
 	Preconditions.checkNotNull(configuration, "Parameter 'configuration' cannot be null");
@@ -151,18 +207,44 @@ public class TelegramMethod {
 	}
     }
 
+    /**
+     * Returns the configured Telegram method name.
+     * 
+     * @return The configured Telegram method name.
+     */
     public String getMethodName() {
 	return methodName;
     }
 
+    /**
+     * Returns the underlying type. The type that will be wrapped into a
+     * <code>Response</code> object.
+     * 
+     * @return The type.
+     */
     public Type getType() {
 	return type;
     }
 
+    /**
+     * Returns the configured API access token.
+     * 
+     * @return The configured API access token.
+     */
     public String getApiToken() {
 	return apiToken;
     }
 
+    /**
+     * Creates the API method end point. Telegram API method endpoints are fixed
+     * URLs based on the api access token and the method name, this method
+     * creates that URLs.
+     * 
+     * @param methodName The method name.
+     * @param apiToken The api access token.
+     * 
+     * @return The URL.
+     */
     private static String createTargetUrl(String methodName, String apiToken) {
 	return StringUtils.replaceEach(
 		Constants.URL_API,

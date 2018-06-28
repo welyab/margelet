@@ -188,7 +188,7 @@ public class Margelet {
     public Response<File> getFile(String fileId) {
 	return callMethod(
 		Constants.METHOD_GET_FILE,
-		ImmutableMap.of(Constants.FILE_ID, fileId),
+		ImmutableMap.of(Constants.PARAM_FILE_ID, fileId),
 		File.class,
 		Configuration.empty()
 	);
